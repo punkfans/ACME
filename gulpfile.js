@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var connect = require('gulp-connect');
 var sass = require('gulp-sass');
 
-gulp.task('default', ['server']);
+gulp.task('default', ['server', 'watch']);
 
 gulp.task('server', ['scss'], function () {
     connect.server({
@@ -16,4 +16,9 @@ gulp.task('scss', function () {
         .pipe(sass())
         .on('error', sass.logError)
         .pipe(gulp.dest('app/css'));
+});
+
+
+gulp.task('watch', function () {
+    gulp.watch('app/**/*.scss', ['scss']);
 });

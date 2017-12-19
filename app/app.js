@@ -7,15 +7,15 @@
         $routeProvider
             .when('/search', {
                 templateUrl: 'app/components/ACME/search/search.html',
-                controller: 'searchController'
+                controller: 'searchController as search'
             })
             .when('/create', {
                 templateUrl: 'app/components/ACME/create/create.html',
-                controller: 'createController'
+                controller: 'createController as create'
             })
             .when('/edit', {
                 templateUrl: 'app/components/ACME/edit/edit.html',
-                controller: 'editController'
+                controller: 'editController as edit'
             })
             .otherwise({
                 redirectTo: '/search'
