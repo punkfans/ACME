@@ -1,12 +1,14 @@
-<div>
+<search>
     <div>
-        <label>
-            Filter:
-            <input ng-model="search.filterKeyWord">
-        </label>
-
         <div>
-            <item></item>
+            <label>
+                Filter:
+                <input ng-model="search.filterKeyWord">
+            </label>
+
+            <div>
+                <item ng-repeat="item in search.dataService.items" item-data="item"></item>
+            </div>
         </div>
     </div>
-</div>
+</search>

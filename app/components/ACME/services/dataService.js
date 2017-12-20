@@ -4,7 +4,7 @@
 
     function dataService() {
         var service = this;
-        service.initialData = [
+        service.items = [
             {
                 title: 'iPhoneX',
                 price: 1000,
