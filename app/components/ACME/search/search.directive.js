@@ -3,9 +3,11 @@
         .directive('searchPage', searchPage)
         .controller('searchController', searchController);
 
-    function searchController(dataService) {
+    function searchController(dataService, tagsFactory) {
         var vm = this;
         vm.items = dataService.items;
+        vm.itemsBasedOnTags = tagsFactory.getItemsBasedOnTags(dataService.items);
+        vm.tags = Object.keys(vm.itemsBasedOnTags);
 
         vm.filterItems = function () {
             vm.items = dataService.items.filter(function (item) {
