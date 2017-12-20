@@ -2,4 +2,24 @@ search {
   .create-button {
     margin-left: 10px;
   }
+
+  .tags-container {
+    margin-bottom: 10px;
+    a {
+      display: inline-block;
+      margin-right: 5px;
+      cursor: pointer;
+      border: 1px solid black;
+      padding: 2px 3px;
+      text-decoration: none;
+
+      &:hover {
+        color: red;
+      }
+
+      &.selected {
+        background-color: deepskyblue;
+      }
+    }
+  }
 }

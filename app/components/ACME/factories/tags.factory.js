@@ -5,7 +5,39 @@
     function tagsFactory() {
         var factory = {};
 
-        // get all available tags to show on the search screen
+        /**
+         return reformatted items categorized by tags
+         [{
+                title: 'iPhoneX',
+                tags: ['electronics']
+            },
+         {
+             title: 'Dji SPARK'
+             tags: ['electronics', 'drone']
+         }]
+
+         ===============>
+
+         {
+             electronics: [
+                {
+                    title: 'iPhoneX',
+                    tags: ['electronics', 'apple']
+                },
+                {
+                 title: 'Dji SPARK'
+                 tags: ['electronics', 'drone']
+                }
+             ],
+             drone: [
+                {
+                 title: 'Dji SPARK'
+                 tags: ['electronics', 'drone']
+                }
+             ]
+
+         }
+         **/
         factory.getItemsBasedOnTags = function (items) {
             var itemsBasedOnTags = {};
             for(var i in items) {
