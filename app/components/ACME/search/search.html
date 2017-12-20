@@ -3,11 +3,13 @@
         <div>
             <label>
                 Filter:
-                <input ng-model="search.filterKeyWord">
+                <input ng-keyup="search.filterItems()" ng-model="search.filterKeyWord">
             </label>
 
+            <button class="create-button btn-success">Create</button>
+
             <div>
-                <item ng-repeat="item in search.dataService.items" item-data="item"></item>
+                <item ng-repeat="item in search.items" item-data="item"></item>
             </div>
         </div>
     </div>

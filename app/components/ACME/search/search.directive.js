@@ -5,7 +5,13 @@
 
     function searchController(dataService) {
         var vm = this;
-        vm.dataService = dataService;
+        vm.items = dataService.items;
+
+        vm.filterItems = function () {
+            vm.items = dataService.items.filter(function (item) {
+                return item.title.toLowerCase().indexOf(vm.filterKeyWord.trim().toLowerCase()) >= 0;
+            });
+        }
     }
 
     function searchPage() {
