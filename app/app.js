@@ -24,7 +24,7 @@
         $locationProvider.hashPrefix('');
     }
 
-    function appController($scope, navBarService) {
-        $scope.navBarService = navBarService;
+    function appController($scope, navigationService) {
+        $scope.navigationService = navigationService;
     }
 })();

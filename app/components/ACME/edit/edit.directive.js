@@ -3,9 +3,19 @@
         .controller('editController', editController)
         .directive('editPage', editPage);
 
-    function editController($routeParams, dataService, $location) {
+    function editController($routeParams, dataService, navigationService) {
         var vm = this;
+        vm.navigationService = navigationService;
+        // set the search tab to inactive
+        navigationService.setInActive(0);
+
+        // original item data
         vm.item = dataService.getItem(parseInt($routeParams.id));
+
+        // keep a copy of the item and bind it to the view, make changes on this copy
+        // instead of on the original one
+        vm.itemModel = Object.assign({}, vm.item);
+
         // get all the keys for the label
         vm.keys = Object.keys(vm.item);
 
@@ -15,15 +25,21 @@
            return key !== 'id' && key !== '$$hashKey';
         });
 
-        vm.goBackToSearchPage = function () {
-            // convert tags from string to array again, also have to trim each of the item
+        vm.updateItem = function() {
+            // convert tags from string to array again if it's changed, also have to trim each of the item
             // 'a, b, b' ===> ['a', 'b', 'c']
-            vm.item.tags = vm.item.tags.split(',').map(function (value) {
-                return value.trim();
-            });
+            if(typeof vm.itemModel.tags === 'string') {
+                vm.itemModel.tags = vm.itemModel.tags.split(',').map(function (value) {
+                    return value.trim();
+                });
+            }
 
-            $location.path('/search');
-        }
+            for(var i in vm.keys) {
+                vm.item[vm.keys[i]] = vm.itemModel[vm.keys[i]];
+            }
+
+            navigationService.goBackToSearchPage();
+        };
     }
 
     function editPage() {
