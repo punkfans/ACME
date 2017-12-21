@@ -1,8 +1,9 @@
 <edit>
     <div class="page-container">
         <div class="form-group" ng-repeat="key in edit.keys">
-            <label for="{{key}}">{{key}}</label>
+            <label for="{{key}}">{{key | capitalize}}</label>
             <input type="text" class="form-control" id="{{key}}" ng-model="edit.item[key]">
         </div>
+        <button ng-click="edit.goBackToSearchPage()" class="btn-success btn-lg">Update</button>
     </div>
 </edit>

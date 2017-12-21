@@ -9,13 +9,12 @@
 
         <div class="tags-container">
             Categories:
-            <a
-                    ng-class="{'selected': search.tagActiveStatus[0]}"
-                    ng-click="search.clearTagFilter()">All</a>
-            <a
-                    ng-class="{'selected': search.tagActiveStatus[$index + 1]}"
-                    ng-click="search.filterByTag(tag, $index + 1)"
-                    ng-repeat="tag in search.tags">{{tag}}</a>
+            <a ng-class="{'selected': search.tagActiveStatus[0]}"
+               ng-click="search.clearTagFilter()">All</a>
+
+            <a ng-class="{'selected': search.tagActiveStatus[$index + 1]}"
+               ng-click="search.filterByTag(tag, $index + 1)"
+               ng-repeat="tag in search.tags">{{tag}}</a>
         </div>
 
         <div>
