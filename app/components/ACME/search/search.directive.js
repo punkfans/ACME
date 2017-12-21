@@ -24,6 +24,12 @@
             vm.tagActiveStatus.push(false);
         }
 
+        var toggleTagStyle = function (index) {
+            for(var j = 0; j < vm.tagActiveStatus.length; j++) {
+                vm.tagActiveStatus[j] = (j === index);
+            }
+        };
+
         vm.filterByTitle = function () {
             vm.items = itemsToBeFiltered.filter(function (item) {
                 return item.title.toLowerCase().indexOf(vm.filterKeyWord.trim().toLowerCase()) >= 0;
@@ -35,13 +41,15 @@
             itemsToBeFiltered = itemsBasedOnTags[tagName];
             vm.filterByTitle();
 
-            //
+            // set style for the tag selected and clear style for the previously selected tag
+            toggleTagStyle(index);
         };
 
-        vm.clearTagFilter = function (index) {
+        vm.clearTagFilter = function () {
             // if user selects all as the tag, reset the itemsToBeFiltered to all items
             itemsToBeFiltered = dataService.items;
             vm.filterByTitle();
+            toggleTagStyle(0);
         };
     }
 
