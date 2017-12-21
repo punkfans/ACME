@@ -38,7 +38,7 @@
                 vm.item[vm.keys[i]] = vm.itemModel[vm.keys[i]];
             }
 
-            navigationService.goBackToSearchPage();
+            navigationService.goToSearchPage();
         };
     }
 

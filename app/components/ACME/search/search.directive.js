@@ -3,7 +3,7 @@
         .directive('searchPage', searchPage)
         .controller('searchController', searchController);
 
-    function searchController(dataService, tagsFactory) {
+    function searchController(dataService, tagsFactory, navigationService) {
 
         var vm = this;
         //set default value for keyword as empty string
@@ -16,6 +16,7 @@
         var itemsBasedOnTags = tagsFactory.getItemsBasedOnTags(dataService.items);
         // get all the available keys to show on the search screen
         vm.tags = Object.keys(itemsBasedOnTags);
+        vm.navigationService = navigationService;
 
         // keep track of which tag is selected and toggle its style
         // by default only the first one is true rest are false

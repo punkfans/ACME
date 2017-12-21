@@ -5,8 +5,6 @@
             <input ng-keyup="search.filterByTitle()" ng-model="search.filterKeyWord">
         </label>
 
-        <button class="create-button btn-success">Create</button>
-
         <div class="tags-container">
             Categories:
             <a ng-class="{'selected': search.tagActiveStatus[0]}"
@@ -19,6 +17,10 @@
 
         <div>
             <item ng-repeat="item in search.items" item-data="item"></item>
+            <div ng-if="!search.items.length">
+                <h1>Can't find what you want?</h1>
+                <button class="btn-lg btn-success" ng-click="search.navigationService.goToCreatePage()">Create One!</button>
+            </div>
         </div>
     </div>
 </search>

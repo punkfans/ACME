@@ -14,10 +14,15 @@
                 service.navBarItemActiveStatus[index] = false;
             };
 
-            service.goBackToSearchPage = function () {
+            service.goToSearchPage = function () {
                 $location.path('/search');
                 // set search tab to active
                 service.setActive(0);
+            };
+
+            service.goToCreatePage = function () {
+                $location.path('/create');
+                service.setActive(1);
             };
 
             return service;
