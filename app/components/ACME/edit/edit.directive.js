@@ -16,6 +16,12 @@
         });
 
         vm.goBackToSearchPage = function () {
+            // convert tags from string to array again, also have to trim each of the item
+            // 'a, b, b' ===> ['a', 'b', 'c']
+            vm.item.tags = vm.item.tags.split(',').map(function (value) {
+                return value.trim();
+            });
+
             $location.path('/search');
         }
     }
