@@ -2,7 +2,8 @@
     <div class="page-container">
         <div class="form-group" ng-repeat="key in edit.keys">
             <label for="{{key}}">{{key | capitalize}}</label>
-            <input type="text" class="form-control" id="{{key}}" ng-model="edit.itemModel[key]">
+            <input ng-if="key !== 'tags'" type="text" class="form-control" id="{{key}}" ng-model="edit.itemModel[key]">
+            <textarea ng-if="key == 'tags'" rows="3" class="form-control" id="{{key}}" ng-model="edit.itemModel[key]"></textarea>
         </div>
         <button ng-click="edit.updateItem()" class="btn-success btn-lg">Update</button>
         <button ng-click="edit.navigationService.goToSearchPage()" class="btn-warning btn-lg">Cancel</button>
