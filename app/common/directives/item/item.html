@@ -2,5 +2,5 @@
     <div>{{item.itemData.title | uppercase}}</div>
     <div>Price: {{item.itemData.price | usd}}</div>
     <div>Address: {{item.itemData.address}}</div>
-    <button>Edit</button>
+    <button ng-click="item.goToEditPage()">Edit</button>
 </div>

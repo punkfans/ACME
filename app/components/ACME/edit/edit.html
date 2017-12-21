@@ -1,1 +1,8 @@
-Edit!
+<edit>
+    <div class="page-container">
+        <div class="form-group" ng-repeat="key in edit.keys">
+            <label for="{{key}}">{{key}}</label>
+            <input type="text" class="form-control" id="{{key}}" ng-model="edit.item[key]">
+        </div>
+    </div>
+</edit>

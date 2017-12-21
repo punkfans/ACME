@@ -14,8 +14,11 @@
         }
     }
 
-    function itemController($scope) {
+    function itemController($scope, $location) {
         var vm = this;
         vm.itemData = $scope.itemData;
+        vm.goToEditPage = function () {
+            $location.path('/' + vm.itemData.id + '/edit');
+        };
     }
 })();

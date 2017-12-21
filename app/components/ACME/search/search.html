@@ -1,27 +1,25 @@
 <search>
-    <div>
+    <div class="page-container">
+        <label>
+            Filter:
+            <input ng-keyup="search.filterByTitle()" ng-model="search.filterKeyWord">
+        </label>
+
+        <button class="create-button btn-success">Create</button>
+
+        <div class="tags-container">
+            Categories:
+            <a
+                    ng-class="{'selected': search.tagActiveStatus[0]}"
+                    ng-click="search.clearTagFilter()">All</a>
+            <a
+                    ng-class="{'selected': search.tagActiveStatus[$index + 1]}"
+                    ng-click="search.filterByTag(tag, $index + 1)"
+                    ng-repeat="tag in search.tags">{{tag}}</a>
+        </div>
+
         <div>
-            <label>
-                Filter:
-                <input ng-keyup="search.filterByTitle()" ng-model="search.filterKeyWord">
-            </label>
-
-            <button class="create-button btn-success">Create</button>
-
-            <div class="tags-container">
-                Categories:
-                <a
-                  ng-class="{'selected': search.tagActiveStatus[0]}"
-                  ng-click="search.clearTagFilter()">All</a>
-                <a
-                  ng-class="{'selected': search.tagActiveStatus[$index + 1]}"
-                  ng-click="search.filterByTag(tag, $index + 1)"
-                  ng-repeat="tag in search.tags">{{tag}}</a>
-            </div>
-
-            <div>
-                <item ng-repeat="item in search.items" item-data="item"></item>
-            </div>
+            <item ng-repeat="item in search.items" item-data="item"></item>
         </div>
     </div>
 </search>

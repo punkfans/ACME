@@ -6,6 +6,7 @@
         var service = this;
         service.items = [
             {
+                id: 1,
                 title: 'iPhoneX',
                 price: 1000,
                 address: 'Chicago',
@@ -13,6 +14,7 @@
                 notes: 'This is the new phone'
             },
             {
+                id: 2,
                 title: 'Dji SPARK',
                 price: 600,
                 address: 'New York',
@@ -20,6 +22,7 @@
                 notes: 'This is a drone'
             },
             {
+                id: 3,
                 title: 'Soccer ball',
                 price: 20,
                 address: 'Seattle',
@@ -27,6 +30,7 @@
                 notes: 'This is a adidas soccer ball'
             },
             {
+                id: 4,
                 title: 'xbox',
                 price: 300,
                 address: 'Miami',
@@ -34,6 +38,18 @@
                 notes: 'This is a game console'
             }
         ];
+
+        // get the item with id
+        service.getItem = function (id) {
+            for(var i in service.items) {
+                if(service.items[i].id === id) {
+                    return service.items[i];
+                }
+            }
+
+            // return empty when there is no corresponding item
+            return {};
+        };
 
         return service;
     }

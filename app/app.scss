@@ -7,6 +7,10 @@ div {
   }
 }
 
+.page-container {
+  padding: 10px;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -16,7 +20,7 @@ ul {
   margin-bottom: 10px;
 
   li {
-    &.col-xs-4 {
+    &.col-xs-6 {
       float: left;
       display: inline;
       padding-left: 0;

@@ -13,7 +13,7 @@
                 templateUrl: 'app/components/ACME/create/create.html',
                 controller: 'createController as create'
             })
-            .when('/edit', {
+            .when('/:id/edit', {
                 templateUrl: 'app/components/ACME/edit/edit.html',
                 controller: 'editController as edit'
             })
