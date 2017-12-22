@@ -48,11 +48,10 @@ gulp -e prod
 
 for production
 
-* open browser and go to [http://localhost:8080/](http://localhost:8080/)
+* open browser and go to [http://localhost:8080/](http://localhost:8080/) (for both local and prod)
+* Have fun with the app
 
 ## Gulp task
-
-* Have fun with the app
 
 ```
 gulp
