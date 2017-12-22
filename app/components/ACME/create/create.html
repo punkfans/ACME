@@ -1,3 +1,42 @@
-<create>
-    <div></div>
-</create>
+<form name="newItemForm" id="create-item-form" novalidate>
+    <div class="page-container">
+        <progress max="4" value={{create.progress}}></progress>
+        <div ng-show="create.stepVisibility[0]">
+            <div class="form-group">
+                <label for="title">Title (Required)</label>
+                <input required name="title" type="text" class="form-control" id="title" ng-model="create.newItemModel.title">
+                <p ng-if="newItemForm.title.$invalid && newItemForm.title.$touched" class="error-msg">Title is required</p>
+            </div>
+
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="text" class="form-control" id="price" ng-model="create.newItemModel.price">
+            </div>
+            <button ng-click="create.nextStep(1)" ng-disabled="newItemForm.title.$invalid" class="btn-success btn-lg">Next</button>
+        </div>
+
+        <div ng-show="create.stepVisibility[1]">
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" class="form-control" id="address" ng-model="create.newItemModel.address">
+            </div>
+            <button ng-click="create.nextStep(2)" class="btn-success btn-lg">Next</button>
+        </div>
+
+        <div ng-show="create.stepVisibility[2]">
+            <div class="form-group">
+                <label for="tags">Tags (Please use "," to separate tags)</label>
+                <textarea rows="3" class="form-control" id="tags" ng-model="create.newItemModel.tags"></textarea>
+            </div>
+            <button ng-click="create.nextStep(3)" class="btn-success btn-lg">Next</button>
+        </div>
+
+        <div ng-show="create.stepVisibility[3]">
+            <div class="form-group">
+                <label for="notes">Notes</label>
+                <input type="text" class="form-control" id="notes" ng-model="create.newItemModel.notes">
+            </div>
+            <button ng-click="create.addItem()" class="btn-success btn-lg">Submit</button>
+        </div>
+    </div>
+</form>

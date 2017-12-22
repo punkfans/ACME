@@ -1,0 +1,22 @@
+form#create-item-form {
+  #title {
+    &.ng-invalid.ng-touched {
+      border: 1px solid red;
+    }
+  }
+  
+  .error-msg {
+    color: red;
+    margin-top: 5px;
+  }
+
+  progress {
+    width: 100%;
+  }
+
+  button:disabled {
+    background-color: darkgrey;
+    border-color: darkgrey;
+    color: lightgrey;
+  }
+}

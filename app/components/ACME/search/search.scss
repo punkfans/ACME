@@ -9,13 +9,14 @@ search {
       display: inline-block;
       margin-right: 5px;
       cursor: pointer;
-      border: 1px solid black;
+      border: 1px solid deepskyblue;
+      border-radius: 8%;
       padding: 2px 3px;
       text-decoration: none;
       color: black;
 
       &:hover {
-        color: red;
+        background-color: deepskyblue;
       }
 
       &.selected {

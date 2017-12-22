@@ -51,6 +51,11 @@
             return {};
         };
 
+        service.addItem = function (item) {
+            item.id = new Date().getTime();
+            service.items.push(item);
+        };
+
         return service;
     }
 })();
