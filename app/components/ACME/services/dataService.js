@@ -36,6 +36,22 @@
                 address: 'Miami',
                 tags: ['electronics', 'game', 'microsoft'],
                 notes: 'This is a game console'
+            },
+            {
+                id: 5,
+                title: 'wii',
+                price: 250,
+                address: 'San Jose',
+                tags: ['electronics', 'game', 'nintendo'],
+                notes: 'This is a game console'
+            },
+            {
+                id: 6,
+                title: 'bed',
+                price: 250,
+                address: 'Chicago',
+                tags: ['furniture'],
+                notes: 'This is a piece of furniture'
             }
         ];
 

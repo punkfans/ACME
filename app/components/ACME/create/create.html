@@ -34,7 +34,7 @@
         <div ng-show="create.stepVisibility[3]">
             <div class="form-group">
                 <label for="notes">Notes</label>
-                <input type="text" class="form-control" id="notes" ng-model="create.newItemModel.notes">
+                <textarea rows="3" class="form-control" id="notes" ng-model="create.newItemModel.notes"></textarea>
             </div>
             <button ng-click="create.addItem()" class="btn-success btn-lg">Submit</button>
         </div>

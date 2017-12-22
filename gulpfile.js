@@ -14,7 +14,7 @@ var del = require('del');
 // check env
 var isProd = gutil.env.e === 'prod';
 
-gulp.task('default', ['clean', 'server', 'watch']);
+gulp.task('default', ['clean', 'server']);
 
 // start the server
 gulp.task('server', ['css', 'js'], function () {
@@ -86,9 +86,4 @@ gulp.task('html', function() {
             module: 'app'
         }))
         .pipe(gulp.dest('app/template'))
-});
-
-// watches file changes
-gulp.task('watch', function () {
-    gulp.watch('app/**/*.scss', ['scss']);
 });
