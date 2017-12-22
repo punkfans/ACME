@@ -1,4 +1,5 @@
 (function () {
+    searchController.$inject = ["dataService", "tagsFactory", "navigationService"];
     angular.module('app')
         .directive('searchPage', searchPage)
         .controller('searchController', searchController);

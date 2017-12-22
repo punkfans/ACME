@@ -1,6 +1,6 @@
 (function() {
     angular.module('app')
-        .service('navigationService', function($location) {
+        .service('navigationService', ["$location", function($location) {
             var service = this;
             service.navBarItemActiveStatus = [true, false]; // search tab is by default activated
 
@@ -26,5 +26,5 @@
             };
 
             return service;
-        });
+        }]);
 })();

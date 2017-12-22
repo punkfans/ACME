@@ -1,4 +1,5 @@
 (function () {
+    itemController.$inject = ["$scope", "$location"];
     angular.module('app')
         .directive('item', item)
         .controller('itemController', itemController);

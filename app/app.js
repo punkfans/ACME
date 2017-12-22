@@ -1,4 +1,6 @@
 (function () {
+    config.$inject = ["$routeProvider", "$locationProvider"];
+    appController.$inject = ["$scope", "navigationService"];
     angular.module('app', ['ngRoute'])
         .config(config)
         .controller('appController', appController);

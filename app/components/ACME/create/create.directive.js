@@ -1,4 +1,5 @@
 (function () {
+    createController.$inject = ["dataService", "navigationService", "tagsFactory"];
     angular.module('app')
         .controller('createController', createController)
         .directive('createPage', createPage);

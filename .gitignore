@@ -9,3 +9,6 @@ gen
 /node_modules/
 /app/css/
 /.idea/
+/app/js/
+/app/template/
+/public/app/

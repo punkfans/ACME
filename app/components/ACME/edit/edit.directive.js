@@ -1,4 +1,5 @@
 (function () {
+    editController.$inject = ["$routeParams", "dataService", "navigationService", "tagsFactory"];
     angular.module('app')
         .controller('editController', editController)
         .directive('editPage', editPage);
